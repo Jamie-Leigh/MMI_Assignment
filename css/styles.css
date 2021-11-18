@@ -1,0 +1,134 @@
+@import '../node_modules/lightbox2/dist/css/lightbox.min.css';
+* {
+  font-family: "Roboto";
+}
+
+h1 {
+  font-weight: 100;
+  color: #fff;
+  font-size: 2.2rem;
+  border-bottom: solid 2px #66d891;
+}
+
+h2 {
+  color: #fff;
+  font-weight: 100;
+  font-size: 2rem;
+}
+
+p {
+  color: #fff;
+  font-weight: 300;
+  line-height: 1.8rem;
+}
+
+header .page-header-top img {
+  max-width: 200px;
+}
+
+header nav {
+  background-color: #66d891 !important;
+}
+header nav a,
+header nav a:hover,
+header nav a:active {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #393e4f;
+}
+header nav .navbar-brand {
+  font-family: "Bangers", cursive;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+.btn.btn-studenteat {
+  background-color: #66d891;
+  color: #393e4f;
+}
+
+.recipe-card {
+  margin: 0 0 30px 0;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  text-align: center;
+  border: solid 1px #eaeaea;
+  border-radius: 3px;
+  height: 255px;
+}
+.recipe-card .recipe-card-image {
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+.recipe-card .recipe-card-image a {
+  display: block;
+  height: 200px;
+  color: #000 !important;
+  text-decoration: inherit !important;
+}
+.recipe-card .recipe-card-image h3 {
+  font-size: 1.1rem;
+  padding-top: 10px;
+  margin: 0;
+}
+
+body#page-login form label {
+  color: #fff !important;
+}
+body#page-login form#registration-form {
+  background-color: #66d891;
+  padding: 10px;
+  border-radius: 3px;
+}
+body#page-login form#registration-form label {
+  color: #393e4f;
+}
+body#page-login form#registration-form .btn {
+  background-color: #fff;
+  color: #393e4f;
+  border: 0;
+}
+
+body#page-recipe .recipe-image {
+  border: solid 3px #FFF;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body#page-recipe .recipe-image a {
+  display: block;
+  height: 150px;
+}
+body#page-recipe .recipe-features {
+  list-style: none;
+  padding: 0;
+  color: #FFF;
+}
+body#page-recipe .recipe-features li {
+  margin-bottom: 10px;
+}
+body#page-recipe .recipe-features li i {
+  text-align: center;
+  width: 27px;
+}
+
+body {
+  background-color: #393e4f !important;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */
