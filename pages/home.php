@@ -9,5 +9,5 @@
       <img src="images/plate.png" alt="Plate of food"/>
     </div>
   </div>
-  <a href="index.php?p=categories" class="btn btn-studenteat">Browse recipes</a>
+  <a href="index.php?p=results" class="btn btn-studenteat">Browse cars</a>
 </div>

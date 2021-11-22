@@ -46,11 +46,28 @@ class Car {
         return $car_data;
     }
 
+    public function getCar($car_id) {
+        $query = "SELECT * FROM cars WHERE active = 1 AND car_id = :car_id";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute([
+            "car_id" => $car_id
+        ]);
+        $car_data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $query = "SELECT * FROM car_images WHERE car_id = :car_id";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute([
+            "car_id" => $car_id
+        ]);
+        $car_data['images'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $car_data;
+    }
+
     public function searchCars($query_string) {
         $query = "SELECT * FROM cars WHERE active = 1 AND make LIKE :query_string;";
         $stmt = $this->Conn->prepare($query);
         $data = [
-            // "query_string" => "%".$query_string."%",
             "query_string" => "%".$query_string."%"
         ];
         $stmt->execute($data);

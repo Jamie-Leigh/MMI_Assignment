@@ -7,10 +7,10 @@
     <div class="row">
         <?php foreach($cars as $car) { ?>
             <div class="col-md-3">
-                <div class="recipe-card">
-                    <div class="recipe-card-image" style="background-image: url('./car_images/<?php echo $car['image']; ?>');">
-                        <a href="index.php?p=recipe&id=<?php echo $car['car_id']; ?>"></a>
-                        <a href="index.php?p=recipe&id=<?php echo $car['car_id']; ?>"><h3><?php echo $car['make']; ?></h3></a>
+                <div class="car-card">
+                    <div class="car-card-image" style="background-image: url('./car_images/<?php echo $car['image']; ?>');">
+                        <a href="index.php?p=car&id=<?php echo $car['car_id']; ?>"></a>
+                        <a href="index.php?p=car&id=<?php echo $car['car_id']; ?>"><h3><?php echo $car['make']; ?></h3></a>
                     </div>
                 </div>
             </div>

@@ -40,7 +40,7 @@ class Favourite {
 		}
 	}
 	public function getAllFavouritesForUser(){
-		$query = "SELECT * FROM car_favourites LEFT JOIN recipes ON car_favourites.car_id = recipes.car_id WHERE car_favourites.user_id = :user_id";
+		$query = "SELECT * FROM car_favourites LEFT JOIN cars ON car_favourites.car_id = cars.car_id WHERE car_favourites.user_id = :user_id";
 		$stmt = $this->Conn->prepare($query);
 		$stmt->execute([
 			"user_id" => $_SESSION['user_data']['user_id']

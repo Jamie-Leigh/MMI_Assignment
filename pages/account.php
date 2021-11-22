@@ -14,7 +14,7 @@
         $user_favs = $Favourite->getAllFavouritesForUser();
         if($user_favs) {
             foreach($user_favs as $fav) {
-                echo '<li><a href="index.php?p=recipe&id='.$fav['recipe_id'].'">'.$fav['recipe_name'].'</a></li>';
+                echo '<li><a href="index.php?p=car&id='.$fav['car_id'].'">'.$fav['car_name'].'</a></li>';
                 }
         }
         ?>

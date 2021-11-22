@@ -60,13 +60,20 @@
                 //login
                 $user_data = $User->loginUser($_POST);
                 if ($user_data) {
-                    $_SESSION['is_loggedin'] = true;
-                    $_SESSION['user_data'] = $user_data;
-                    ?>
-                    <div class="alert alert-success" role="alert">
-                        You have been logged in, welcome back!
-                    </div>
+                    if ($user_data['password_attempts'] > 5) { ?>
+                        <div class="alert alert-danger" role="alert">
+                        Login credentials are incorrect
+                        </div>
                     <?php
+                    } else {
+                        $_SESSION['is_loggedin'] = true;
+                        $_SESSION['user_data'] = $user_data;
+                        ?>
+                        <div class="alert alert-success" role="alert">
+                            You have been logged in, welcome back!
+                        </div>
+                        <?php
+                    }
                 } else {
                     ?>
                     <div class="alert alert-danger" role="alert">
@@ -81,6 +88,14 @@
     <div class="col-lg-6">
         <form id="registration-form" method=post action="">
         <div class="form-group">
+            <label for="reg_first_name">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name">
+        </div>
+        <div class="form-group">
+            <label for="reg_surname">Surname</label>
+            <input type="text" class="form-control" id="surname" name="surname">
+        </div>
+        <div class="form-group">
             <label for="reg_email">Email address</label>
             <input type="email" class="form-control" id="reg_email" name="email">
         </div>
@@ -91,6 +106,26 @@
         <div class="form-group">
             <label for="reg_password_confirm">Confirm Password</label>
             <input type="password" class="form-control" id="reg_password_confirm" name="password_confirm">
+        </div>
+        <div class="form-group">
+            <label for="reg_phone">Phone number</label>
+            <input type="text" class="form-control" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+            <label for="reg_address_line_1">Address Line 1</label>
+            <input type="text" class="form-control" id="address_line_1" name="address_line_1">
+        </div>
+        <div class="form-group">
+            <label for="reg_address_line_2">Address Line 2</label>
+            <input type="text" class="form-control" id="address2" name="address_line_2">
+        </div>
+        <div class="form-group">
+            <label for="reg_address_line_3">Address Line 3</label>
+            <input type="text" class="form-control" id="address3" name="address_line_3">
+        </div>
+        <div class="form-group">
+            <label for="reg_postcode">Postcode</label>
+            <input type="text" class="form-control" id="postcode" name="postcode">
         </div>
         <button type="submit" name="reg" value="1" class="btn btn-primary">Register</button>
         </form>

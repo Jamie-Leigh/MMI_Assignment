@@ -1,18 +1,18 @@
 <?php
   $Car = new Car($Conn);
-  $car_data = $Car->getAllActiveCars($_GET['id']);
+  $car = $Car->getCar($_GET['id']);
 ?>
 
 <div class="container">
-    <h1 class="mb-4 pb-2"><?php echo $data_data['make']." ".$car_data['model']; ?></h1>
+    <h1 class="mb-4 pb-2"><?php echo $car['make']." ".$car['model']; ?></h1>
 
     <div class="row">
         <div class="col-md-6">
-          <?php if($car_data['images']) { ?>
+          <?php if($car['image']) { ?>
             <div class="row">
-              <?php foreach($car_data['images'] as $image) { ?>
+              <?php foreach($car['images'] as $image) { ?>
                 <div class="col-md-4">
-                    <div class="car-image mb-4" style="background-image: url('./car-images/<?php echo $image['car_image']; ?>');">
+                    <div class="car-image mb-4" style="background-image: url('./car_images_additional/<?php echo $image['image_location']; ?>');">
                     <a href="./car-images/<?php $image['car_image'];?>" data-lightbox='car-imgs'></a>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-6">
           <p>
-            <?php echo $car_data['description']; ?>
+            <?php echo $car['description']; ?>
           </p>
           <?php
             $Favourite = new Favourite($Conn);

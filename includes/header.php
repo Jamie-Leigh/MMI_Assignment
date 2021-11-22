@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<?php
+var_dump($_SESSION);
+// $User = new User($Conn);
+// $user = $User->getUser($_SESSION['id']);
+?>
 <html>
   <head>
-    <title>Quick and affordable student recipes – StudentEat</title>
+    <title>Quick and affordable  cars – YouBuyAnyCar</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/javascript.min.css">
     <link rel="stylesheet" href="./css/styles.css"/>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -16,7 +21,7 @@
   <body id="page-<?php echo $page; ?>">
     <header>
       <div class="page-header-top text-center text-md-start container">
-        <a href="index.php"><img src="images/logo.png" alt="StudentEat"></a>
+        <a href="index.php"><img src="images/logo.png" alt="YouBuyAnyCar logo"></a>
       </div>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -29,12 +34,32 @@
               <a class="nav-link" href="index.php?p=home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?p=categories">Categories</a>
+              <a class="nav-link" href="index.php?p=faq">FAQ</a>
             </li>
-            <?php if($_SESSION['is_loggedin']) { ?>
+
+            <?php
+            //is logged in
+            if($_SESSION['is_loggedin']) { ?>
               <li class="nav-item">
                 <a class="nav-link" href="index.php?p=account">My Account</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php?p=basket">My Basket</a>
+              </li>
+              <?php
+              // if Admin
+              if ($_SESSION['user_data']['user_type'] == 'ADMIN' || $_SESSION['user_data']['user_type'] == 'SUPER') { ?>
+                <li class="nav-item">
+                <a class="nav-link" href="index.php?p=carAdmin">Car admin</a>
+                </li>
+              <?php
+              // if SuperAdmin
+              } if ($_SESSION['user_data']['user_type'] == 'SUPER') { ?>
+                <li class="nav-item">
+                <a class="nav-link" href="index.php?p=userAdmin">User admin</a>
+                </li>
+                
+              <?php } ?>
               <li class="nav-item">
                 <a class="nav-link" href="index.php?p=logout">Logout</a>
               </li>
