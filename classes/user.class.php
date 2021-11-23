@@ -49,7 +49,6 @@
 			$stmt->execute(array(
 				'email' => $user_email
 			));
-			var_dump($stmt->fetch);
 			return $stmt->fetch();
 		}
 
@@ -68,7 +67,6 @@
 				$this->setUserLocked($user_data['email'], true);
 			}
 			$isLocked = $this->getUserLocked($user_data['email'])['locked'];
-			var_dump($isLocked);
 
 			$query = "SELECT * FROM user WHERE email = :email";
 			$stmt = $this->Conn->prepare($query);

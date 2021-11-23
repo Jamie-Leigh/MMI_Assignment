@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<?php
-var_dump($_SESSION);
-// $User = new User($Conn);
-// $user = $User->getUser($_SESSION['id']);
-?>
 <html>
   <head>
     <title>Quick and affordable  cars – YouBuyAnyCar</title>
