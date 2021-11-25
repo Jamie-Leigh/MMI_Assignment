@@ -60,11 +60,12 @@ footer p {
   padding: 12px;
   text-align: center;
   border: solid 1px #eaeaea;
-  border-radius: 3px;
+  border-radius: 15px;
   height: 255px;
 }
 .car-card .car-card-image {
   height: 200px;
+  width: 200px;
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -76,6 +77,9 @@ footer p {
   height: 200px;
   color: #000 !important;
   text-decoration: inherit !important;
+}
+.car-card .car-card-image .car-card-text {
+  height: 40px;
 }
 .car-card .car-card-image h3 {
   font-size: 1.1rem;

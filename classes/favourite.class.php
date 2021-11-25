@@ -12,7 +12,7 @@ class Favourite {
 			"user_id" => $_SESSION['user_data']['user_id'],
 			"car_id" => $car_id
 		]);
-		return $stmt->fetch(PDO::FETCH_ASSOC);
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	public function toggleFavourite($car_id){

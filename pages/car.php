@@ -43,14 +43,19 @@
           <?php
             $Favourite = new Favourite($Conn);
             $is_fav = $Favourite->isFavourite($_GET['id']);
-
-            if($is_fav) {
-              ?>
-                <button id="removeFav" type="button" class="btn btn-primary mb-3" data-carid="<?php echo $_GET['id']; ?>">Remove from favourites</button>
-              <?php
+            if ($_SESSION['is_loggedin']) {
+              if($is_fav) {
+                ?>
+                  <button id="removeFav" type="button" class="btn btn-primary mb-3" data-carid="<?php echo $_GET['id']; ?>">Remove from favourites</button>
+                <?php
+              } else {
+                ?>
+                  <button id="addFav" type="button" class="btn btn-primary mb-3" data-carid="<?php echo $_GET['id']; ?>">Add to favourites</button>
+                <?php
+              }
             } else {
               ?>
-                <button id="addFav" type="button" class="btn btn-primary mb-3" data-carid="<?php echo $_GET['id']; ?>">Add to favourites</button>
+                <button id="addFav" type="button" class="btn btn-primary mb-3" disabled >Login to add cars to your favourites</button>
               <?php
             }
             ?>
