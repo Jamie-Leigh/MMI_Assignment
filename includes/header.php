@@ -26,41 +26,41 @@
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.php?p=home">Home</a>
+              <a class="nav-link<?php echo $page == "home" ? " active" : "" ?>" href="index.php?p=home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?p=faq">FAQ</a>
+            <a class="nav-link<?php echo $page == "faq" ? " active" : "" ?>" href="index.php?p=faq">FAQ</a>
             </li>
 
             <?php
             //is logged in
             if($_SESSION['is_loggedin']) { ?>
               <li class="nav-item">
-                <a class="nav-link" href="index.php?p=account">My Account</a>
+              <a class="nav-link<?php echo $page == "account" ? " active" : "" ?>" href="index.php?p=account">My Account</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.php?p=basket">My Basket</a>
+              <a class="nav-link<?php echo $page == "basket" ? " active" : "" ?>" href="index.php?p=basket">My Basket</a>
               </li>
               <?php
               // if Admin
               if ($_SESSION['user_data']['user_type'] == 'ADMIN' || $_SESSION['user_data']['user_type'] == 'SUPER') { ?>
                 <li class="nav-item">
-                <a class="nav-link" href="index.php?p=carAdmin">Car admin</a>
+                <a class="nav-link<?php echo $page == "carAdmin" ? " active" : "" ?>" href="index.php?p=carAdmin">Car admin</a>
                 </li>
               <?php
               // if SuperAdmin
               } if ($_SESSION['user_data']['user_type'] == 'SUPER') { ?>
                 <li class="nav-item">
-                <a class="nav-link" href="index.php?p=userAdmin">User admin</a>
+                <a class="nav-link<?php echo $page == "userAdmin" ? " active" : "" ?>" href="index.php?p=userAdmin">User admin</a>
                 </li>
                 
               <?php } ?>
               <li class="nav-item">
-                <a class="nav-link" href="index.php?p=logout">Logout</a>
+              <a class="nav-link<?php echo $page == "logout" ? " active" : "" ?>" href="index.php?p=logout">Logout</a>
               </li>
             <?php } else { ?>
               <li class="nav-item">
-                <a class="nav-link" href="index.php?p=login">Login / Register</a>
+              <a class="nav-link<?php echo $page == "login" ? " active" : "" ?>" href="index.php?p=login">Login / Register</a>
               </li>
             <?php } ?>
             </ul>
