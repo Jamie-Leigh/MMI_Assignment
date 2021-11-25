@@ -97,6 +97,14 @@ footer p {
   border-bottom: 10px;
   color: #5785c2;
 }
+@media screen and (max-width: 768px) {
+  #filter-form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-template-areas: "min-price" "max-price" "min-mileage" "max-mileage" "fuel-type" "trans-type";
+  }
+}
 #filter-form .min-price {
   grid-area: min-price;
 }

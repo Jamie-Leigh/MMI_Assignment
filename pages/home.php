@@ -79,5 +79,4 @@
       <img src="images/dealership.png" alt="Cars for sale"/>
     </div>
   </div>
-  <a href="index.php?p=results" class="btn btn-studenteat">Browse cars</a>
 </div>
