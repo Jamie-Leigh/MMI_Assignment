@@ -1,5 +1,14 @@
 body#page-car {
-    .car-image {
+    .car-image-main {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        img {
+            height: 400px;
+            border: 3px solid white;
+        }
+    }
+    .car-image-additional {
         border: solid 3px #FFF;
         height: 150px;
         background-repeat: no-repeat;
@@ -12,18 +21,6 @@ body#page-car {
         a {
             display: block;
             height: auto;
-        }
-    }
-    .car-features {
-        list-style: none;
-        padding: 0;
-        color: #FFF;
-        li {
-            margin-bottom: 10px;
-            i {
-                text-align: center;
-                width: 27px;
-            }
         }
     }
 }
