@@ -1,4 +1,10 @@
 <?php
+  $Filter = new Filter($Conn);
+  var_dump($Filter->generateParams($_POST));
+?>
+
+
+<?php
 $Car = new Car($Conn);
 $cars = $Car->getAllActiveCars();
 ?>
@@ -12,7 +18,7 @@ $cars = $Car->getAllActiveCars();
                 <div class="car-card">
                     <div class="car-card-image" style="background-image: url('./car_images_main/<?php echo $car['image']; ?>');">
                         <a href="index.php?p=car&id=<?php echo $car['car_id']; ?>"></a>
-                        <a href="index.php?p=car&id=<?php echo $car['make']; ?>"><h3><?php echo $car['model']; ?></h3></a>
+                        <a href="index.php?p=car&id=<?php echo $car['car_id']; ?>"><h3><?php echo $car['make'].' '.$car['model']; ?></h3></a>
                     </div>
                 </div>
             </div>
