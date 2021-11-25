@@ -2,10 +2,9 @@
   <h1 class="mb-4 pb-2">Welcome to YouBuyAnyCar</h1>
   <div class="row">
     <div class="col-lg-8 filter-container ">
-      <p>To find your dream car at a reasonable price, click 'Browse cars' below</p>
-      <p>If you know what you want, you can search by text, or narrow it down with the filters below</p>
+      <p>If you know what car you want, you can search by text above, or narrow our available cars down with the filters below</p>
+      <p>If you just want to see all the cars we currently have in stock, click the button below with no filters applied</p>
       <div class="filters">
-        <!-- <form id="filter-form" method=post action=""> -->
         <form id="filter-form" method=post action="index.php?p=results">
             <div class="form-group min-price">
               <label for="min_price">Min Price</label>
