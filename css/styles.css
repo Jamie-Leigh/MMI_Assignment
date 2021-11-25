@@ -11,7 +11,7 @@ h1 {
   font-weight: 100;
   color: #fff;
   font-size: 2.2rem;
-  border-bottom: solid 2px #66d891;
+  border-bottom: solid 2px #5785c2;
 }
 
 h2 {
@@ -31,7 +31,7 @@ header .page-header-top img {
 }
 
 header nav {
-  background-color: #66d891 !important;
+  background-color: #5785c2 !important;
 }
 header nav a,
 header nav a:hover,
@@ -49,8 +49,8 @@ footer p {
 }
 
 .btn.btn-studenteat {
-  background-color: #66d891;
-  color: #393e4f;
+  background-color: #5785c2;
+  color: #3a3a3a;
 }
 
 .car-card {
@@ -83,20 +83,53 @@ footer p {
   margin: 0;
 }
 
+.filter-container,
+.filters {
+  margin-bottom: 10px;
+}
+
+#filter-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "min-price max-price" "min-mileage max-mileage" "fuel-type trans-type";
+  grid-column-gap: 80px;
+  border-bottom: 10px;
+  color: #5785c2;
+}
+#filter-form .min-price {
+  grid-area: min-price;
+}
+#filter-form .max-price {
+  grid-area: max-price;
+}
+#filter-form .min-mileage {
+  grid-area: min-mileage;
+}
+#filter-form .max-price {
+  grid-area: max-price;
+}
+#filter-form .fuel-type {
+  grid-area: fuel-type;
+}
+#filter-form .trans-type {
+  grid-area: trans-type;
+}
+
 body#page-login form label {
   color: #fff !important;
 }
 body#page-login form#registration-form {
-  background-color: #66d891;
+  background-color: #5785c2;
   padding: 10px;
   border-radius: 3px;
 }
 body#page-login form#registration-form label {
-  color: #393e4f;
+  color: #3a3a3a;
 }
 body#page-login form#registration-form .btn {
   background-color: #fff;
-  color: #393e4f;
+  color: #3a3a3a;
   border: 0;
 }
 
@@ -112,7 +145,7 @@ body#page-car .car-image {
 }
 body#page-car .car-image a {
   display: block;
-  height: 150px;
+  height: auto;
 }
 body#page-car .car-features {
   list-style: none;
@@ -128,7 +161,7 @@ body#page-car .car-features li i {
 }
 
 body {
-  background-color: #393e4f !important;
+  background-color: #3a3a3a !important;
 }
 
 img {
