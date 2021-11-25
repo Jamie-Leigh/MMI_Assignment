@@ -6,25 +6,24 @@ class Filter {
 	}
 
 	public function generateParams($filters){
-        $params = '';
         if($filters['filter']) {
-          if($filters['min-price']) {
-            $params .= "&min-price=".$filters['min-price'];
+          if($filters['min_price']) {
+            $params['price']['min_price'] = $filters['min_price'];
           }
-          if($filters['max-price']) {
-            $params .= "&max-price=".$filters['max-price'];
+          if($filters['max_price']) {
+            $params['price']['max_price'] = $filters['max_price'];
           }
-          if($filters['min-mileage']) {
-            $params .= "&min-mileage=".$filters['min-mileage'];
+          if($filters['min_mileage']) {
+            $params['mileage']['min_mileage'] = $filters['min_mileage'];
           }
-          if($filters['max-mileage']) {
-            $params .= "&max-mileage=".$filters['max-mileage'];
+          if($filters['max_mileage']) {
+            $params['mileage']['max_mileage'] = $filters['max_mileage'];
           }
-          if($filters['fuel-type']) {
-            $params .= "&fuel-type=".$filters['fuel-type'];
+          if($filters['fuel_type']) {
+            $params['fuel_type'] = $filters['fuel_type'];
           }
-          if($filters['trans-type']) {
-            $params .= "&trans-type=".$filters['trans-type'];
+          if($filters['transmission_type']) {
+            $params['transmission_type'] = $filters['transmission_type'];
           }
         }
           return $params;

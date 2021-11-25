@@ -4,6 +4,31 @@ class Car {
     public function __construct($Conn){
         $this->Conn = $Conn;
     }
+
+	private function generateParams($filters){
+        if($filters['filter']) {
+          if($filters['min_price']) {
+            $params['price']['min_price'] = $filters['min_price'];
+          }
+          if($filters['max_price']) {
+            $params['price']['max_price'] = $filters['max_price'];
+          }
+          if($filters['min_mileage']) {
+            $params['mileage']['min_mileage'] = $filters['min_mileage'];
+          }
+          if($filters['max_mileage']) {
+            $params['mileage']['max_mileage'] = $filters['max_mileage'];
+          }
+          if($filters['fuel_type']) {
+            $params['fuel_type'] = $filters['fuel_type'];
+          }
+          if($filters['transmission_type']) {
+            $params['transmission_type'] = $filters['transmission_type'];
+          }
+        }
+          return $params;
+	}
+
     public function getAllActiveCars(){
         $query = "SELECT * FROM cars WHERE active = 1";
         $stmt = $this->Conn->prepare($query);
@@ -11,37 +36,38 @@ class Car {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getAllFilteredActiveCars($car_filters) {
+    public function getAllFilteredActiveCars($filters) {
+        $car_filters = $this->generateParams($filters);
         $query = "SELECT * FROM cars WHERE active = 1";
         $data = [];
-        if ($car_filters->mileage->max_mileage) {
-            $query .= " AND mileage <= :max_mileage";
-            $data['max_mileage'] = $car_filters->mileage->max_mileage;
+        if ($car_filters['price']['min_price']) {
+            $query .= " AND price >= :min_price";
+            $data['min_price'] = $car_filters['price']['min_price'];
         }
-        if ($car_filters->mileage->min_mileage) {
+        if ($car_filters['price']['max_price']) {
+            $query .= " AND price <= :max_price";
+            $data['max_price'] = $car_filters['price']['max_price'];
+        }
+        if ($car_filters['mileage']['min_mileage']) {
             $query .= " AND mileage >= :min_mileage";
-            $data['min_mileage'] = $car_filters->mileage->min_mileage;
+            $data['min_mileage'] = $car_filters['mileage']['min_mileage'];
         }
-        if ($car_filters->price->max_price) {
-            $query .= " AND cost_per_day <= :max_price";
-            $data['max_price'] = $car_filters->price->max_price;
+        if ($car_filters['mileage']['max_mileage']) {
+            $query .= " AND mileage <= :max_mileage";
+            $data['max_mileage'] = $car_filters['mileage']['max_mileage'];
         }
-        if ($car_filters->price->min_price) {
-            $query .= " AND cost_per_day >= :min_price";
-            $data['min_price'] = $car_filters->price->min_price;
-        }
-        if ($car_filters->fuel_type) {
+        if ($car_filters['fuel_type']) {
             $query .= " AND fuel_type = :fuel_type";
-            $data['fuel_type'] = $car_filters->fuel_type;
+            $data['fuel_type'] = $car_filters['fuel_type'];
         }
-        if ($car_filters->transmission_type) {
+        if ($car_filters['transmission_type']) {
             $query .= " AND transmission_type = :transmission_type";
-            $data['transmission_type'] = $car_filters->transmission_type;
+            $data['transmission_type'] = $car_filters['transmission_type'];
         }
         $query .= ";";
         $stmt = $this->Conn->prepare($query);
         $stmt->execute($data);
-        $car_data = $stmt->fetch(PDO::FETCH_ASSOC);
+        $car_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $car_data;
     }

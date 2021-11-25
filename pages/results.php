@@ -1,12 +1,10 @@
 <?php
-  $Filter = new Filter($Conn);
-  var_dump($Filter->generateParams($_POST));
-?>
+//   $Filter = new Filter($Conn);
+  $Car = new Car($Conn);
+//   $filters = $Filter->generateParams($_POST);
+// $cars = $Car->getAllFilteredActiveCars($filters);
+$cars = $Car->getAllFilteredActiveCars($_POST);
 
-
-<?php
-$Car = new Car($Conn);
-$cars = $Car->getAllActiveCars();
 ?>
 
 <div class="container">

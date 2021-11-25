@@ -8,19 +8,19 @@
         <!-- <form id="filter-form" method=post action=""> -->
         <form id="filter-form" method=post action="index.php?p=results">
             <div class="form-group min-price">
-              <label for="min-price">Min Price</label>
-              <select class="form-control" id="min-price" name="min-price" onChange=>
+              <label for="min_price">Min Price</label>
+              <select class="form-control" id="min_price" name="min_price" onChange=>
                 <option selected disabled>Choose a minimum price</option>
-                <option value="0">£0</option>
                 <option value="500">£500</option>
                 <option value="1000">£1000</option>
                 <option value="3000">£3000</option>
                 <option value="5000">£5000</option>
+                <option value="10000">£10000</option>
               </select>
             </div>
             <div class="form-group max-price">
-              <label for="max-price">Max Price</label>
-              <select class="form-control" id="max-price" name="max-price">
+              <label for="max_price">Max Price</label>
+              <select class="form-control" id="max_price" name="max_price">
                 <option selected disabled>Choose a maximum price</option>
                 <option value="500">£500</option>
                 <option value="1000">£1000</option>
@@ -30,8 +30,8 @@
               </select>
             </div>
             <div class="form-group fuel-type">
-              <label for="fuel-type">Fuel Type</label>
-              <select class="form-control" id="fuel-type" name="fuel-type">
+              <label for="fuel_type">Fuel Type</label>
+              <select class="form-control" id="fuel_type" name="fuel_type">
                 <option selected disabled>Choose a fuel type</option>
                 <option>Petrol</option>
                 <option>Diesel</option>
@@ -41,30 +41,30 @@
               </select>
             </div>
             <div class="form-group min-mileage">
-              <label for="min-mileage">Min Mileage</label>
-              <select class="form-control" id="min-mileage" name="min-mileage">
+              <label for="min_mileage">Min Mileage</label>
+              <select class="form-control" id="min_mileage" name="min_mileage">
                 <option selected disabled>Choose a minimum mileage</option>
-                <option>0</option>
-                <option>10000</option>
-                <option>30000</option>
-                <option>50000</option>
-                <option>75000</option>
+                <option value="10000">10000</option>
+                <option value="30000">30000</option>
+                <option value="50000">50000</option>
+                <option value="75000">75000</option>
+                <option value="100000">100000</option>
               </select>
             </div>
             <div class="form-group max-mileage">
-              <label for="max-mileage">Max Mileage</label>
-              <select class="form-control" id="max-mileage" name="max-mileage">
+              <label for="max_mileage">Max Mileage</label>
+              <select class="form-control" id="max_mileage" name="max_mileage">
                 <option selected disabled>Choose a maximum mileage</option>
-                <option>15000</option>
-                <option>35000</option>
-                <option>55000</option>
-                <option>80000</option>
-                <option>150000</option>
+                <option value="15000">15000</option>
+                <option value="35000">35000</option>
+                <option value="55000">55000</option>
+                <option value="80000">80000</option>
+                <option value="150000">150000</option>
               </select>
             </div>
-            <div class="form-group trans-type">
-              <label for="transmission-type">Transmission Type</label>
-              <select class="form-control" id="transmission-type" name="transmission-type">
+            <div class="form-group transmission-type">
+              <label for="transmission_type">Transmission Type</label>
+              <select class="form-control" id="transmission_type" name="transmission_type">
                 <option selected disabled>Choose a transmission type</option>
                 <option>Manual</option>
                 <option>Automatic</option>
