@@ -68,11 +68,7 @@
                     } else {
                         $_SESSION['is_loggedin'] = true;
                         $_SESSION['user_data'] = $user_data;
-                        ?>
-                        <div class="alert alert-success" role="alert">
-                            You have been logged in, welcome back!
-                        </div>
-                        <?php
+                        header('Location: index.php?p=account');
                     }
                 } else {
                     ?>
