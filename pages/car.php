@@ -1,4 +1,5 @@
 <?php
+  $Basket = new Basket($Conn);
   $Car = new Car($Conn);
   $car = $Car->getCar($_GET['id']);
 ?>
@@ -41,24 +42,9 @@
             <p class="year-built">Price: <?php echo $car['price']; ?></p>
           </div>
           <?php
-            $Favourite = new Favourite($Conn);
-            $is_fav = $Favourite->isFavourite($_GET['id']);
-            if ($_SESSION['is_loggedin']) {
-              if($is_fav) {
-                ?>
-                  <button id="removeFav" type="button" class="btn btn-primary mb-3" data-carid="<?php echo $_GET['id']; ?>">Remove from favourites</button>
-                <?php
-              } else {
-                ?>
-                  <button id="addFav" type="button" class="btn btn-primary mb-3" data-carid="<?php echo $_GET['id']; ?>">Add to favourites</button>
-                <?php
-              }
-            } else {
-              ?>
-                <button id="addFav" type="button" class="btn btn-primary mb-3" disabled >Login to add cars to your favourites</button>
-              <?php
-            }
-            ?>
+            $isInBasket = $Basket->isInBasket($car['car_id']);
+            require(__DIR__.'/../includes/addToBasket.php');
+          ?>
         </div>
     </div>
 </div>
