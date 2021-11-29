@@ -20,10 +20,10 @@ class Car {
             $params['mileage']['max_mileage'] = $filters['max_mileage'];
           }
           if($filters['fuel_type']) {
-            $params['fuel_type'] = $filters['fuel_type'];
+            $params['fuel'] = $filters['fuel_type'];
           }
           if($filters['transmission_type']) {
-            $params['transmission_type'] = $filters['transmission_type'];
+            $params['transmission'] = $filters['transmission_type'];
           }
         }
           return $params;
@@ -57,11 +57,11 @@ class Car {
             $data['max_mileage'] = $car_filters['mileage']['max_mileage'];
         }
         if ($car_filters['fuel_type']) {
-            $query .= " AND fuel_type = :fuel_type";
+            $query .= " AND fuel = :fuel_type";
             $data['fuel_type'] = $car_filters['fuel_type'];
         }
         if ($car_filters['transmission_type']) {
-            $query .= " AND transmission_type = :transmission_type";
+            $query .= " AND transmission = :transmission_type";
             $data['transmission_type'] = $car_filters['transmission_type'];
         }
         $query .= ";";

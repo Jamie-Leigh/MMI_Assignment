@@ -34,8 +34,8 @@
             ?>
             <p class="mileage">Mileage: <?php echo $car['mileage']; ?></p>
             <p class="year-built">Year Built: <?php echo $car['year_built']; ?></p>
-            <p class="engine">Fuel Type: <?php echo $car['fuel_type']; ?></p>
-            <p class="colour">Transmission Type: <?php echo $car['transmission_type']; ?></p>
+            <p class="engine">Fuel Type: <?php echo $car['fuel']; ?></p>
+            <p class="colour">Transmission Type: <?php echo $car['transmission']; ?></p>
             <p class="year-built">Seats: <?php echo $car['seats']; ?></p>
             <p class="year-built">Colour: <?php echo $car['colour']; ?></p>
             <p class="year-built">Body Type: <?php echo $car['body_type']; ?></p>

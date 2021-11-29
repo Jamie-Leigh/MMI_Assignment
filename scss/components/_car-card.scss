@@ -11,15 +11,14 @@
 	grid-template-columns: 200px auto;
 	grid-template-rows: 200px 40px;
 	grid-template-areas:
-	"image description"
+	"image     description"
 	"car-title .";
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 991px) {
 		grid-template-columns: 180px auto;
-	// 	grid-template-rows: 1fr 40px;
-	// 	grid-template-areas:
-	// 	"image"
-	// 	"car-title";
+		grid-template-areas:
+		"image     description"
+		"car-title description";
 	}
 
 
@@ -32,7 +31,7 @@
 		-moz-background-size: cover;
 		background-size: cover;
 		grid-area: image;
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 991px) {
 			width: 180px;
 		}
 
@@ -57,7 +56,6 @@
 
 	.car-details {
 		grid-area: description;
-		height: 200px;
 		padding-left: 10px;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 4fr;
@@ -71,11 +69,12 @@
 
 		@media screen and (max-width: 768px) {
 			grid-template-columns: 1fr;
-			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr 40px;
 			grid-template-areas:
 			"description"
 			"description"
-			"price";
+			"price"
+			"addToBasket";
 		}
 
 		.make {
@@ -93,10 +92,10 @@
 		.description {
 			grid-area: description;
 		}
-		.fuel_type {
+		.fuel {
 			grid-area: fuel_type;
 		}
-		.transmission_type {
+		.transmission {
 			grid-area: transmission_type;
 		}
 		.year_built {
@@ -115,7 +114,7 @@
 			grid-area: body_type;
 		}
 
-		.make, .model, .model_variant, .mileage, .fuel_type, .transmission_type, .year_built, .seats, .colour, .body_type {
+		.make, .model, .model_variant, .mileage, .fuel, .transmission, .year_built, .seats, .colour, .body_type, .addToBasket {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
@@ -133,6 +132,7 @@
 		}
 		.addToBasket {
 			grid-area: addToBasket;
+			justify-self: center;
 		}
 	}
 }
