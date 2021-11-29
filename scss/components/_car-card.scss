@@ -7,7 +7,22 @@
     border: solid 1px #eaeaea;
     border-radius: 15px;
 	height: 255px;
-	
+	display: grid;
+	grid-template-columns: 200px auto;
+	grid-template-rows: 200px 40px;
+	grid-template-areas:
+	"image description"
+	"car-title .";
+
+	@media screen and (max-width: 768px) {
+		grid-template-columns: 180px auto;
+	// 	grid-template-rows: 1fr 40px;
+	// 	grid-template-areas:
+	// 	"image"
+	// 	"car-title";
+	}
+
+
 	.car-card-image {
 		height: 200px;
 		width: 200px;
@@ -16,6 +31,10 @@
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		background-size: cover;
+		grid-area: image;
+		@media screen and (max-width: 768px) {
+			width: 180px;
+		}
 
 		a {
 			display: block;
@@ -23,7 +42,9 @@
 			color: #000 !important;
 			text-decoration: inherit !important;
 		}
+
 		.car-card-text {
+			grid-area: car-title;
 			height: 40px;
 		}
 
@@ -31,6 +52,87 @@
 			font-size: 1.1rem;
 			padding-top: 10px;
 			margin: 0;
+		}
+	}
+
+	.car-details {
+		grid-area: description;
+		height: 200px;
+		padding-left: 10px;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 4fr;
+		grid-template-rows: 1fr 1fr 1fr 40px;
+		grid-gap: 10px;
+		grid-template-areas:
+		"make      model      transmission_type  model_variant  description"
+		"mileage   fuel_type  year_built         .              description"
+		"seats     colour     body_type          .              price"
+		".         .          .                  .              addToBasket";
+
+		@media screen and (max-width: 768px) {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-areas:
+			"description"
+			"description"
+			"price";
+		}
+
+		.make {
+			grid-area: make;
+		}
+		.model {
+			grid-area: model;
+		}
+		.model_variant {
+			grid-area: model_variant;
+		}
+		.mileage {
+			grid-area: mileage;
+		}
+		.description {
+			grid-area: description;
+		}
+		.fuel_type {
+			grid-area: fuel_type;
+		}
+		.transmission_type {
+			grid-area: transmission_type;
+		}
+		.year_built {
+			grid-area: year_built;
+		}
+		.price {
+			grid-area: price;
+		}
+		.seats {
+			grid-area: seats;
+		}
+		.colour {
+			grid-area: colour;
+		}
+		.body_type {
+			grid-area: body_type;
+		}
+
+		.make, .model, .model_variant, .mileage, .fuel_type, .transmission_type, .year_built, .seats, .colour, .body_type {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			@media screen and (max-width: 768px) {
+				display: none;
+			}
+		}
+
+		.detail-title {
+			font-weight: 700;
+		}
+		.detail-content {
+			font-weight: 200;
+		}
+		.addToBasket {
+			grid-area: addToBasket;
 		}
 	}
 }
