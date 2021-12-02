@@ -47,4 +47,14 @@ class Basket {
 		
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
+
+	public function clearBasketForUser(){
+		$query = "DELETE FROM car_basket WHERE user_id = :user_id";
+		$stmt = $this->Conn->prepare($query);
+		$stmt->execute([
+			"user_id" => $_SESSION['user_data']['user_id']
+		]);
+		return true;
+	}
+
 }

@@ -25,6 +25,6 @@
             <label for="photo">Photo</label>
             <input type="file" class="form-control-file" name="photo">
         </div>
-        <button class="btn btn-studenteat" type="submit">Update Profile photo</button>
+        <button class="btn btn-ybac" type="submit">Update Profile photo</button>
     </form>
 </div>

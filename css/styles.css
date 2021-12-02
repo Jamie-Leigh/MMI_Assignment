@@ -48,7 +48,7 @@ footer p {
   font-size: 0.9rem;
 }
 
-.btn.btn-studenteat {
+.btn.btn-ybac {
   background-color: #5785c2;
   color: #3a3a3a;
 }
@@ -262,6 +262,11 @@ body#page-car .car-image-additional {
 body#page-car .car-image-additional a {
   display: block;
   height: auto;
+}
+
+.checkoutButton {
+  display: flex;
+  justify-content: center;
 }
 
 body {

@@ -10,9 +10,13 @@
             foreach($user_basket as $car) {
                     require(__DIR__.'/../includes/carCard.php');
                 }
+                echo '<div class="checkoutButton">
+                    <form method="post" action="index.php?p=checkout">
+                        <button type="submit" class="btn btn-ybac checkout" data-userid="'.$_SESSION["user_data"]["user_id"].'">Checkout</button>
+                    </form>
+                  </div>';
             } else {
                 echo "<h3>Basket is empty!</h3>";
-        }
-        ?>
+            } ?>
     </div>
 </div>

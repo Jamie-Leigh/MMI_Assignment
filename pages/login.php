@@ -123,7 +123,7 @@
             <label for="reg_postcode">Postcode</label>
             <input type="text" class="form-control" id="postcode" name="postcode">
         </div>
-        <button type="submit" name="reg" value="1" class="btn btn-primary">Register</button>
+        <button type="submit" name="reg" value="1" class="btn btn-ybac">Register</button>
         </form>
     </div>
     <div class="col-lg-6">
@@ -136,7 +136,7 @@
             <label for="login_password">Password</label>
             <input type="password" class="form-control" id="login_password" name="password">
         </div>
-        <button type="submit" name="login" value="1" class="btn btn-studenteat">Login</button>
+        <button type="submit" name="login" value="1" class="btn btn-ybac">Login</button>
         </form>
     </div>
     </div>

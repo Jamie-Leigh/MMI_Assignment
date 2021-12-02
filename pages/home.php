@@ -71,7 +71,7 @@
               </select>
             </div>
             </div>
-            <button type="submit" name="filter" value="1" class="btn btn-studenteat">Search with above filters</button>
+            <button type="submit" name="filter" value="1" class="btn btn-ybac">Search with above filters</button>
         </form>
       </div>
     <div class="col-lg-4">

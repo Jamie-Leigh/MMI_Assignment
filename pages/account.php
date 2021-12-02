@@ -6,17 +6,6 @@
             echo '<img class="mb-3" style="max-width: 100px;" src="./user-images/'.$_SESSION['user_data']['image'].'" />';
         }
         ?>
-    <p><a class="btn btn-studenteat" href="index.php?p=editprofileimage">Edit profile image</a></p>
-    <h2>My Basket</h2>
-    <ul class="user-basket">
-    <?php
-        $Basket = new Basket($Conn);
-        $user_basket = $Basket->getBasketForUser();
-        if($user_basket) {
-            foreach($user_basket as $basket) {
-                echo '<li><a href="index.php?p=car&id='.$basket['car_id'].'">'.$basket['car_name'].'</a></li>';
-                }
-        }
-        ?>
+    <p><a class="btn btn-ybac" href="index.php?p=editprofileimage">Edit profile image</a></p>
     </ul>
 </div>
