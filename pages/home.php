@@ -6,7 +6,7 @@
       <p>If you just want to see all the cars we currently have in stock, click the button below with no filters applied</p>
       <div class="filters">
         <form id="filter-form" method=post action="index.php?p=results">
-            <div class="form-group min-price">
+            <div class="ui dropdown form-group min-price">
               <label for="min_price">Min Price</label>
               <select class="form-control" id="min_price" name="min_price" onChange=>
                 <option selected value="">Choose a minimum price</option>
@@ -75,7 +75,17 @@
         </form>
       </div>
     <div class="col-lg-4">
-      <img src="images/dealership.png" alt="Cars for sale"/>
+      <h2>Our locations:</h2>
+      <div id='map' style='width: auto; height: 400px;'></div>
+      <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiamFtaWUtbGVpZ2giLCJhIjoiY2t3cGV2Ymx0MDh0bzJ1cnRhcGduNGJqYiJ9.atGN7v9atiuCwDxcz1HCiw';
+      const map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/jamie-leigh/ckwpfte9o912714p482u4ddrb',
+          center: [-1.4, 53.2],
+          zoom: 4.3
+      });
+      </script>
     </div>
   </div>
 </div>
