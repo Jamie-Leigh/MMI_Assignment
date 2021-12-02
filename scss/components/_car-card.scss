@@ -12,13 +12,13 @@
 	grid-template-rows: 200px 40px;
 	grid-template-areas:
 	"image     description"
-	"car-title .";
+	"car-title description";
 
 	@media screen and (max-width: 991px) {
-		grid-template-columns: 180px auto;
-		grid-template-areas:
-		"image     description"
-		"car-title description";
+		 grid-template-columns: 180px auto;
+	// 	grid-template-areas:
+	// 	"image     description"
+	// 	"car-title .";
 	}
 
 
@@ -67,7 +67,7 @@
 		"seats     colour     body_type          .              price"
 		".         .          .                  .              addToBasket";
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 991px) {
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr 1fr 1fr 40px;
 			grid-template-areas:
@@ -114,12 +114,12 @@
 			grid-area: body_type;
 		}
 
-		.make, .model, .model_variant, .mileage, .fuel, .transmission, .year_built, .seats, .colour, .body_type, .addToBasket {
+		.make, .model, .model_variant, .mileage, .fuel, .transmission, .year_built, .seats, .colour, .body_type {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: center;
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 991px) {
 				display: none;
 			}
 		}
@@ -133,6 +133,10 @@
 		.addToBasket {
 			grid-area: addToBasket;
 			justify-self: center;
+			@media screen and (max-width: 425px) {
+				font-size: smaller;
+				padding: 0;
+			}
 		}
 	}
 }

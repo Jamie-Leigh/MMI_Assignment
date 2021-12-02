@@ -16,6 +16,7 @@ $(function(){
 
   $('body').on('click', '.remove', function (e) {
     var car_id = $(this).data('carid');
+    var page = $(this).data('page');
     console.log('remove', car_id);
     console.log('#removebasket',car_id);
     $.ajax({
@@ -26,7 +27,11 @@ $(function(){
     })
     .done(function(rtnData) {
       console.log(rtnData);
-      $(`.${car_id}`).text('Add to Basket').attr('class', `btn btn-primary addToBasket add ${car_id}`);
+      if (page == "basket") {
+        window.location.reload();
+      } else {
+        $(`.${car_id}`).text('Add to Basket').attr('class', `btn btn-primary addToBasket add ${car_id}`);
+      }
     })
   });
 })

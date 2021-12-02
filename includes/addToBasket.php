@@ -2,7 +2,7 @@
     if ($_SESSION['is_loggedin']) {
         if($isInBasket) {
         ?>
-            <button type="button" class="btn btn-primary addToBasket remove <?php echo $car['car_id']; ?>" data-carid="<?php echo $car['car_id']; ?>">Remove from basket</button>
+            <button type="button" class="btn btn-primary addToBasket remove <?php echo $car['car_id']; ?>" data-carid="<?php echo $car['car_id']; ?>" data-page="<?php echo $_GET['p']?>">Remove from basket</button>
         <?php
         } else {
         ?>
