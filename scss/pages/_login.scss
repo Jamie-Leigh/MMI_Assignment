@@ -13,8 +13,11 @@ body#page-login {
             .btn {
                 background-color: #fff;
                 color: $primary-color;
-                border: 0;
+                border-top: 5px;
             }
+        }
+        .btn-ybac {
+            margin-top: 10px
         }
     }
 }

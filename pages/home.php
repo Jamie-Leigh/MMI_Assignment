@@ -10,10 +10,10 @@
               <label for="min_price">Min Price</label>
               <select class="form-control" id="min_price" name="min_price" onChange=>
                 <option selected value="">Choose a minimum price</option>
-                <option value="500">£500</option>
-                <option value="1000">£1000</option>
+                <option value="1500">£1500</option>
                 <option value="3000">£3000</option>
                 <option value="5000">£5000</option>
+                <option value="7500">£7500</option>
                 <option value="10000">£10000</option>
               </select>
             </div>
@@ -21,10 +21,10 @@
               <label for="max_price">Max Price</label>
               <select class="form-control" id="max_price" name="max_price">
                 <option selected value="">Choose a maximum price</option>
-                <option value="500">£500</option>
-                <option value="1000">£1000</option>
+                <option value="1500">£1500</option>
                 <option value="3000">£3000</option>
                 <option value="5000">£5000</option>
+                <option value="7000">£7000</option>
                 <option value="10000">£10000</option>
               </select>
             </div>

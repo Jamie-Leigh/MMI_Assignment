@@ -11,7 +11,7 @@ h1 {
   font-weight: 100;
   color: #fff;
   font-size: 2.2rem;
-  border-bottom: solid 2px #5785c2;
+  border-bottom: solid 2px #5c80bc;
 }
 
 h2 {
@@ -31,7 +31,7 @@ header .page-header-top img {
 }
 
 header nav {
-  background-color: #5785c2 !important;
+  background-color: #5c80bc !important;
 }
 header nav a,
 header nav a:hover,
@@ -49,8 +49,8 @@ footer p {
 }
 
 .btn.btn-ybac {
-  background-color: #5785c2;
-  color: #3a3a3a;
+  background-color: #5c80bc;
+  color: #30323d;
 }
 
 .car-card {
@@ -194,7 +194,7 @@ footer p {
   grid-template-areas: "min-price min-mileage" "max-price max-mileage" "fuel-type trans-type";
   grid-column-gap: 80px;
   border-bottom: 10px;
-  color: #5785c2;
+  color: #5c80bc;
 }
 @media screen and (max-width: 768px) {
   #filter-form {
@@ -227,17 +227,20 @@ body#page-login form label {
   color: #fff !important;
 }
 body#page-login form#registration-form {
-  background-color: #5785c2;
+  background-color: #5c80bc;
   padding: 10px;
   border-radius: 3px;
 }
 body#page-login form#registration-form label {
-  color: #3a3a3a;
+  color: #30323d;
 }
 body#page-login form#registration-form .btn {
   background-color: #fff;
-  color: #3a3a3a;
-  border: 0;
+  color: #30323d;
+  border-top: 5px;
+}
+body#page-login form .btn-ybac {
+  margin-top: 10px;
 }
 
 body#page-car .car-image-main {
@@ -270,7 +273,7 @@ body#page-car .car-image-additional a {
 }
 
 body {
-  background-color: #3a3a3a !important;
+  background-color: #30323d !important;
 }
 
 img {
