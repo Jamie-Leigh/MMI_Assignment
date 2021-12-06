@@ -3,6 +3,24 @@
     margin-bottom: 10px;
 }
 
+.search {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "search ."
+    "button .";
+    grid-column-gap: 80px;
+    grid-row-gap: 10px;
+
+    .search {
+        grid-area: search;
+    }
+    .btn-ybac {
+        grid-area: button;
+        width: min-content;
+    }
+}
+
 #filter-form {
   display: grid;
   grid-template-columns: 1fr 1fr;

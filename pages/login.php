@@ -1,5 +1,15 @@
 <div class="container">
     <h1 class="mb-4 pb-2">Login or register</h1>
+    <script>
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
     <?php
         $User = new User($Conn);
         if($_POST['reg']) {
@@ -23,15 +33,16 @@
                 </div>
             <?php
             } else {
-                //register user
+                //create and login user
                 $attempt = $User->createUser($_POST);
                 echo $attempt;
                 if ($attempt) {
-                    ?>
-                    <div class="alert alert-success" role="alert">
-                        User created - Please login!
-                    </div>
-                    <?php
+                    $user_data = $User->loginUser($_POST);
+                    if ($user_data) {
+                        $_SESSION['is_loggedin'] = true;
+                        $_SESSION['user_data'] = $user_data;
+                        header('Location: index.php');
+                    }
                 } else {
                     ?>
                     <div class="alert alert-danger" role="alert">
@@ -68,7 +79,7 @@
                     } else {
                         $_SESSION['is_loggedin'] = true;
                         $_SESSION['user_data'] = $user_data;
-                        header('Location: index.php?p=account');
+                        header('Location: index.php');
                     }
                 } else {
                     ?>
@@ -98,10 +109,12 @@
         <div class="form-group">
             <label for="reg_password">Password</label>
             <input type="password" class="form-control" id="reg_password" name="password">
+            <input type="checkbox" onclick="myFunction('reg_password')">Show Password
         </div>
         <div class="form-group">
             <label for="reg_password_confirm">Confirm Password</label>
             <input type="password" class="form-control" id="reg_password_confirm" name="password_confirm">
+            <input type="checkbox" onclick="myFunction('reg_password_confirm')">Show Confirm Password
         </div>
         <div class="form-group">
             <label for="reg_phone">Phone number</label>
@@ -123,7 +136,7 @@
             <label for="reg_postcode">Postcode</label>
             <input type="text" class="form-control" id="postcode" name="postcode">
         </div>
-        <button type="submit" name="reg" value="1" class="btn btn-ybac">Register</button>
+        <button type="submit" name="reg" value="1" class="btn btn-ybac">Register and login</button>
         </form>
     </div>
     <div class="col-lg-6">
@@ -135,6 +148,7 @@
         <div class="form-group">
             <label for="login_password">Password</label>
             <input type="password" class="form-control" id="login_password" name="password">
+            <input type="checkbox" onclick="myFunction('login_password')">Show Password
         </div>
         <button type="submit" name="login" value="1" class="btn btn-ybac">Login</button>
         </form>

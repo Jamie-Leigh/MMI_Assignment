@@ -3,10 +3,15 @@
   <div class="row">
     <div class="col-lg-8 filter-container ">
       <p>If you know what car you want, you can search by text in the header above, or narrow our available cars down with the filters below</p>
+      <form action="index.php?p=results" class="search" method="post" class="d-flex">
+        <input class="form-control search mr-sm2" type="search" id="search" name="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-ybac" type="submit">Search</button>
+      </form>
+      <br />
       <p>If you just want to see all the cars we currently have in stock, click the button below with no filters applied</p>
       <div class="filters">
         <form id="filter-form" method=post action="index.php?p=results">
-            <div class="ui dropdown form-group min-price">
+            <div class="form-group min-price">
               <label for="min_price">Min Price</label>
               <select class="form-control" id="min_price" name="min_price" onChange=>
                 <option selected value="">Choose a minimum price</option>
@@ -24,7 +29,7 @@
                 <option value="1500">£1500</option>
                 <option value="3000">£3000</option>
                 <option value="5000">£5000</option>
-                <option value="7000">£7000</option>
+                <option value="7500">£7500</option>
                 <option value="10000">£10000</option>
               </select>
             </div>
@@ -67,7 +72,7 @@
                 <option selected value="">Choose a transmission type</option>
                 <option>Manual</option>
                 <option>Automatic</option>
-                <option>semi-automatic</option>
+                <option>Semi-automatic</option>
               </select>
             </div>
             </div>

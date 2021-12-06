@@ -6,7 +6,10 @@ class Car {
     }
 
 	private function generateParams($filters){
-        if($filters['filter']) {
+        if ($filters['search']) {
+            $params['search'] = $filters['search'];
+        }
+        else if ($filters['filter']) {
           if($filters['min_price']) {
             $params['price']['min_price'] = $filters['min_price'];
           }
@@ -26,8 +29,19 @@ class Car {
             $params['transmission'] = $filters['transmission_type'];
           }
         }
-          return $params;
+          
+        return $params;
 	}
+
+    private function searchCars($query_string) {
+        $query = "SELECT * FROM cars WHERE active = 1 AND make LIKE :query_string;";
+        $stmt = $this->Conn->prepare($query);
+        $data = [
+            "query_string" => "%".$query_string."%"
+        ];
+        $stmt->execute($data);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function getAllActiveCars(){
         $query = "SELECT * FROM cars WHERE active = 1";
@@ -40,34 +54,38 @@ class Car {
         $car_filters = $this->generateParams($filters);
         $query = "SELECT * FROM cars WHERE active = 1";
         $data = [];
-        if ($car_filters['price']['min_price']) {
-            $query .= " AND price >= :min_price";
-            $data['min_price'] = $car_filters['price']['min_price'];
+        if ($car_filters['search']) {
+            $car_data = $this->searchCars($car_filters['search']);
+        } else {
+            if ($car_filters['price']['min_price']) {
+                $query .= " AND price >= :min_price";
+                $data['min_price'] = $car_filters['price']['min_price'];
+            }
+            if ($car_filters['price']['max_price']) {
+                $query .= " AND price <= :max_price";
+                $data['max_price'] = $car_filters['price']['max_price'];
+            }
+            if ($car_filters['mileage']['min_mileage']) {
+                $query .= " AND mileage >= :min_mileage";
+                $data['min_mileage'] = $car_filters['mileage']['min_mileage'];
+            }
+            if ($car_filters['mileage']['max_mileage']) {
+                $query .= " AND mileage <= :max_mileage";
+                $data['max_mileage'] = $car_filters['mileage']['max_mileage'];
+            }
+            if ($car_filters['fuel_type']) {
+                $query .= " AND fuel = :fuel_type";
+                $data['fuel_type'] = $car_filters['fuel_type'];
+            }
+            if ($car_filters['transmission_type']) {
+                $query .= " AND transmission = :transmission_type";
+                $data['transmission_type'] = $car_filters['transmission_type'];
+            }
+            $query .= ";";
+            $stmt = $this->Conn->prepare($query);
+            $stmt->execute($data);
+            $car_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        if ($car_filters['price']['max_price']) {
-            $query .= " AND price <= :max_price";
-            $data['max_price'] = $car_filters['price']['max_price'];
-        }
-        if ($car_filters['mileage']['min_mileage']) {
-            $query .= " AND mileage >= :min_mileage";
-            $data['min_mileage'] = $car_filters['mileage']['min_mileage'];
-        }
-        if ($car_filters['mileage']['max_mileage']) {
-            $query .= " AND mileage <= :max_mileage";
-            $data['max_mileage'] = $car_filters['mileage']['max_mileage'];
-        }
-        if ($car_filters['fuel_type']) {
-            $query .= " AND fuel = :fuel_type";
-            $data['fuel_type'] = $car_filters['fuel_type'];
-        }
-        if ($car_filters['transmission_type']) {
-            $query .= " AND transmission = :transmission_type";
-            $data['transmission_type'] = $car_filters['transmission_type'];
-        }
-        $query .= ";";
-        $stmt = $this->Conn->prepare($query);
-        $stmt->execute($data);
-        $car_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $car_data;
     }
@@ -90,13 +108,13 @@ class Car {
         return $car_data;
     }
 
-    public function searchCars($query_string) {
-        $query = "SELECT * FROM cars WHERE active = 1 AND make LIKE :query_string;";
-        $stmt = $this->Conn->prepare($query);
-        $data = [
-            "query_string" => "%".$query_string."%"
-        ];
-        $stmt->execute($data);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+    // private function searchCars($query_string) {
+    //     $query = "SELECT * FROM cars WHERE active = 1 AND make LIKE :query_string;";
+    //     $stmt = $this->Conn->prepare($query);
+    //     $data = [
+    //         "query_string" => "%".$query_string."%"
+    //     ];
+    //     $stmt->execute($data);
+    //     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // }
 }

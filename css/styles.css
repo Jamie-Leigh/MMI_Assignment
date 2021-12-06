@@ -187,6 +187,21 @@ footer p {
   margin-bottom: 10px;
 }
 
+.search {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "search ." "button .";
+  grid-column-gap: 80px;
+  grid-row-gap: 10px;
+}
+.search .search {
+  grid-area: search;
+}
+.search .btn-ybac {
+  grid-area: button;
+  width: min-content;
+}
+
 #filter-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -270,6 +285,18 @@ body#page-car .car-image-additional a {
 .checkoutButton {
   display: flex;
   justify-content: center;
+}
+
+.row {
+  justify-content: center;
+}
+.row .column {
+  display: flex;
+  justify-content: center;
+}
+.row .column .form {
+  display: flex;
+  flex-direction: column;
 }
 
 body {

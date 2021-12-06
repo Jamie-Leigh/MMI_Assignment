@@ -4,7 +4,7 @@
         if(isset($_FILES['photo'])) {
             $allowed_mime = array('image/gif', 'image/jpeg', 'image/png');
             if(!in_array($_FILES['photo']['type'], $allowed_mime)) {
-                echo '<div class="alert alert-danger role="alert>Only GIF< JPEG and PNG files are allowed</div>';
+                echo '<div class="alert alert-danger" role="alert">Only GIF, JPEG and PNG files are allowed</div>';
             } else {
                 //file is image
                 $random = substr(str_shuffle(MD5(microtime())), 0, 10);
@@ -20,11 +20,17 @@
             }
         }
     ?>
-    <form method="post" action="" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="photo">Photo</label>
-            <input type="file" class="form-control-file" name="photo">
+
+    <div class="row">
+        <div class="col-lg-6 column">
+            <form method="post" class="form" action="" enctype="multipart/form-data">
+                <div class="form-group">
+                    <p>Upload a photo by clicking the Choose File button below. Then click Update Profile Photo
+                        </p>
+                    <input type="file" name="photo" class="form-control-file">
+                </div>
+                <button class="btn btn-ybac" type="submit">Update Profile Photo</button>
+            </form>
         </div>
-        <button class="btn btn-ybac" type="submit">Update Profile photo</button>
-    </form>
+    </div>
 </div>

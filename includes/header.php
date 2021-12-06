@@ -67,10 +67,6 @@
               </li>
             <?php } ?>
             </ul>
-            <form action="index.php?p=search" method="post" class="d-flex">
-              <input class="form-control mr-sm2" type="search" name="query" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-dark ms-2" type="submit">Search</button>
-            </form>
             </div>
         </div>
       </nav>
