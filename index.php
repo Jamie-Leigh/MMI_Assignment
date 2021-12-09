@@ -12,14 +12,14 @@ if($_SESSION['user_data']) {
 }
 ini_set('display_errors', 'On');
 $page = $_GET['p'];
-$pages = ['account', 'basket', 'car', 'checkout', 'editprofileimage', 'faq', 'home', 'login', 'logout', 'results', 'search'];
+$pages = ['account', 'basket', 'car', 'caradmin', 'checkout', 'editprofileimage', 'faq', 'home', 'login', 'logout', 'results', 'search', 'useradmin'];
 $isUser = ($_SESSION['user_data']['user_type'] == 'USER');
 $isAdmin = ($_SESSION['user_data']['user_type'] == 'ADMIN');
 $isSuper = ($_SESSION['user_data']['user_type'] == 'SUPER');
 
 $visitor_notallowed = ['caradmin', 'useradmin', 'basket', 'account'];
 $user_notallowed = ['caradmin', 'useradmin'];
-$admin_notallowed = ['caradmin'];
+$admin_notallowed = ['useradmin'];
 
 
 

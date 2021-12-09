@@ -1,0 +1,19 @@
+.myModal {
+    position: absolute;
+    width: 100%;
+    min-height: -webkit-fill-available;
+    background: rgba(192,192,192,0.7);   
+}
+
+.modal-header {
+    justify-content: center;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+        color: black;
+    }
+}

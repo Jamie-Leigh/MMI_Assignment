@@ -3,5 +3,6 @@
 </footer>
 
 <script src="./js/car_basket.js"></script>
+<script src="./js/editcar.js"></script>
 </body>
 </html>

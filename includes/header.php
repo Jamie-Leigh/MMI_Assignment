@@ -48,13 +48,13 @@
               // if Admin
               if ($_SESSION['user_data']['user_type'] == 'ADMIN' || $_SESSION['user_data']['user_type'] == 'SUPER') { ?>
                 <li class="nav-item">
-                <a class="nav-link<?php echo $page == "carAdmin" ? " active" : "" ?>" href="index.php?p=carAdmin">Car admin</a>
+                <a class="nav-link<?php echo $page == "carAdmin" ? " active" : "" ?>" href="index.php?p=caradmin">Car admin</a>
                 </li>
               <?php
               // if SuperAdmin
               } if ($_SESSION['user_data']['user_type'] == 'SUPER') { ?>
                 <li class="nav-item">
-                <a class="nav-link<?php echo $page == "userAdmin" ? " active" : "" ?>" href="index.php?p=userAdmin">User admin</a>
+                <a class="nav-link<?php echo $page == "userAdmin" ? " active" : "" ?>" href="index.php?p=useradmin">User admin</a>
                 </li>
                 
               <?php } ?>
