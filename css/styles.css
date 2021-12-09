@@ -106,7 +106,7 @@ footer p {
   grid-template-columns: 1fr 1fr 1fr 1fr 4fr;
   grid-template-rows: 1fr 1fr 1fr 40px;
   grid-gap: 10px;
-  grid-template-areas: "make      model      transmission_type  model_variant  description" "mileage   fuel_type  year_built         car_id         description" "seats     colour     body_type          active         price" ".         .          .                  .              button";
+  grid-template-areas: "make      model      transmission_type  variant  description" "mileage   fuel_type  year_built         car_id         description" "seats     colour     body_type          active         price" ".         .          .                  .              button";
 }
 @media screen and (max-width: 991px) {
   .car-card .car-details {
@@ -121,8 +121,8 @@ footer p {
 .car-card .car-details .model {
   grid-area: model;
 }
-.car-card .car-details .model_variant {
-  grid-area: model_variant;
+.car-card .car-details .variant {
+  grid-area: variant;
 }
 .car-card .car-details .mileage {
   grid-area: mileage;
@@ -157,32 +157,34 @@ footer p {
 .car-card .car-details .active {
   grid-area: active;
 }
-.car-card .car-details .make, .car-card .car-details .model, .car-card .car-details .model_variant, .car-card .car-details .mileage, .car-card .car-details .fuel, .car-card .car-details .transmission, .car-card .car-details .year_built, .car-card .car-details .seats, .car-card .car-details .colour, .car-card .car-details .body_type, .car-card .car-details .car_id, .car-card .car-details .active {
+.car-card .car-details .make, .car-card .car-details .model, .car-card .car-details .variant, .car-card .car-details .mileage, .car-card .car-details .fuel, .car-card .car-details .transmission, .car-card .car-details .year_built, .car-card .car-details .seats, .car-card .car-details .colour, .car-card .car-details .body_type, .car-card .car-details .car_id, .car-card .car-details .active {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 @media screen and (max-width: 991px) {
-  .car-card .car-details .make, .car-card .car-details .model, .car-card .car-details .model_variant, .car-card .car-details .mileage, .car-card .car-details .fuel, .car-card .car-details .transmission, .car-card .car-details .year_built, .car-card .car-details .seats, .car-card .car-details .colour, .car-card .car-details .body_type, .car-card .car-details .car_id, .car-card .car-details .active {
+  .car-card .car-details .make, .car-card .car-details .model, .car-card .car-details .variant, .car-card .car-details .mileage, .car-card .car-details .fuel, .car-card .car-details .transmission, .car-card .car-details .year_built, .car-card .car-details .seats, .car-card .car-details .colour, .car-card .car-details .body_type, .car-card .car-details .car_id, .car-card .car-details .active {
     display: none;
   }
 }
 .car-card .car-details .detail-title {
   font-weight: 700;
   color: black;
+  width: 100%;
 }
 .car-card .car-details .detail-content {
   font-weight: 200;
   color: black;
   resize: none;
+  width: 100%;
 }
 .car-card .car-details .btn {
   grid-area: button;
   justify-self: center;
 }
 @media screen and (max-width: 425px) {
-  .car-card .car-details .btn {
+  .car-card .car-details .btn:not(.edit) {
     font-size: smaller;
     padding: 0;
   }
@@ -214,7 +216,7 @@ footer p {
   border-top: 4px solid #30323d;
   width: 40px;
   height: 40px;
-  animation: spin 2s linear infinite;
+  animation: spin 1.5s linear infinite;
 }
 
 @keyframes spin {
@@ -312,18 +314,46 @@ body#page-login form .btn-ybac {
   margin-top: 10px;
 }
 
-body#page-car .car-image-main {
+body#page-car .centralised {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+body#page-car .car-photos {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  grid-template-rows: 340px 1fr;
+  grid-template-areas: "main additional" "description description";
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  body#page-car .car-photos {
+    grid-template-columns: 320px;
+    grid-template-rows: 340px auto 1fr;
+    grid-template-areas: "main" "additional" "description";
+    width: auto;
+  }
+}
+body#page-car .car-image-main {
+  grid-area: main;
   margin-bottom: 30px;
 }
 body#page-car .car-image-main img {
-  height: 400px;
+  height: 320px;
   border: 3px solid white;
 }
+body#page-car .additional {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: auto;
+}
 body#page-car .car-image-additional {
+  grid-area: additional;
   border: solid 3px #FFF;
   height: 150px;
+  width: 150px;
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;

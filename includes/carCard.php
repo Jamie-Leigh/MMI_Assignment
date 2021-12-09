@@ -18,7 +18,7 @@
                     // The attribute names aren't very readable as they are, so The string functions:
                     // ucwords() and str_replace() are used here to improve readability to the user.
                     // If it's displaying price, a £ symbol is added with a ternary.
-                    if ($page == 'results' && !in_array($detailName, $attributesToHide)) {
+                    if (($page == 'results' || $page == 'basket') && !in_array($detailName, $attributesToHide)) {
                         echo "<div class=".$detailName.">
                                 <div class='detail-title'>".ucwords(str_replace("_", " ", $detailName))."</div>
                                 <div class='detail-content'>".($detailName == 'price' ? "£".number_format($detail) : $detail)."</div>
@@ -40,7 +40,21 @@
                                 >".$detail."</textarea>
                         </div>";
                         }
-                        if (!in_array($detailName, ['image', 'description'])) {
+                        if ($detailName == 'car_id') {
+                            echo "<div class=".$detailName.">
+                            <div class='detail-title'>".ucwords($detailName)."</div>
+                            <input
+                            type='text'
+                            disabled
+                            name=".$detailName."
+                            class='detail-content ".$detailName."'
+                            value='".$detail."' 
+                            placeholder='".$detail."'
+                        >
+                        </input>
+                            </div>";
+                        }
+                        if (!in_array($detailName, ['image', 'description', 'car_id'])) {
                         echo "<div class=".$detailName.">
                                 <div class='detail-title'>".ucwords(str_replace("_", " ", $detailName))."</div>
                                 <input

@@ -112,7 +112,7 @@ class Car {
         $query = "UPDATE cars SET
         make = :make,
         model = :model,
-        model_variant = :model_variant,
+        variant = :variant,
         mileage = :mileage,
         year_built = :year_built,
         description = :description,
@@ -128,7 +128,7 @@ class Car {
         $data = [
             'make' => $car_details['make'],
             'model' => $car_details['model'],
-            'model_variant' => $car_details['model_variant'],
+            'variant' => $car_details['variant'],
             'mileage' => (int)$car_details['mileage'],
             'year_built' => (int)$car_details['year_built'],
             'description' => $car_details['description'],

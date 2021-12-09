@@ -7,29 +7,28 @@
 <div class="container">
     <h1 class="mb-4 pb-2"><?php echo $car['make']." ".$car['model']; ?></h1>
 
-    <div class="row">
-        <div class="col-md-6">
+    <div class="centralised">
+        <div class="car-photos">
           <div class="car-image-main">
             <img src="./car_images_main/<?php echo $car['image']; ?>"/>
           </div>
-            <div class="row">
-              <?php foreach($car['images'] as $image) { ?>
-                <div class="col-md-4">
-                    <div class="car-image-additional mb-4" style="background-image: url('./car_images_additional/<?php echo $image['image_location']; ?>');">
-                    <a href="./car-images/<?php $image['image_location'];?>" data-lightbox='car-imgs'></a>
-                    </div>
-                </div>
-              <?php } ?>
+          <div class='additional'>
+              <?php foreach($car['images'] as $index=>$image) {
+                    echo "<div class='car-image-additional mb-4 ".$index."' style='background-image: url(\"./car_images_additional/".$image['image_location']."\");'>
+                      <a href='./car-images/".$image['image_location']." data-lightbox='car-imgs'></a>
+                    </div>";
+              }
+              ?>
             </div>
         </div>
-        <div class="col-md-6 car-details">
+        <div class="car-details">
           <div class="details">
             <p class="description"><?php echo $car['description']; ?></p>
             <p class="make">Make: <?php echo $car['make']; ?></p>
             <p class="model">Model: <?php echo $car['model']; ?></p>
             <?php
-              if ($car['model_varient']) {
-                echo '<p class="model">Model: '.$car["model_varient"].'</p>';
+              if ($car['variant']) {
+                echo '<p class="model">Model Variant: '.$car["variant"].'</p>';
               }
             ?>
             <p class="mileage">Mileage: <?php echo $car['mileage']; ?></p>
