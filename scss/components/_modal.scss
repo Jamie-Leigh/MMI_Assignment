@@ -5,8 +5,13 @@
     background: rgba(192,192,192,0.7);   
 }
 
+.modal-dialog {
+    margin: 0.75rem auto !important;
+}
+
 .modal-header {
-    justify-content: center;
+    justify-content: center !important;
+    border-bottom: none !important;
 }
 
 .modal-body {

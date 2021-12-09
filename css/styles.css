@@ -205,8 +205,13 @@ footer p {
   background: rgba(192, 192, 192, 0.7);
 }
 
+.modal-dialog {
+  margin: 0.75rem auto !important;
+}
+
 .modal-header {
-  justify-content: center;
+  justify-content: center !important;
+  border-bottom: none !important;
 }
 
 .modal-body {
@@ -255,6 +260,18 @@ a {
 
 p {
   text-align: left !important;
+}
+
+.myModal {
+  background: none;
+}
+.myModal .modal-dialog > .modal-content {
+  background-color: rgba(0, 255, 0, 0.5);
+  border: #e8c547 solid 1px;
+}
+.myModal .modal-dialog > .modal-content .border-header {
+  border-bottom: none !important;
+  justify-content: center !important;
 }
 
 .search {

@@ -1,3 +1,4 @@
+
 <?php
     $Car = new Car($Conn);
     $cars = $Car->getAllCars($_POST);

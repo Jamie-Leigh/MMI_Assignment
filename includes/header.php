@@ -17,6 +17,27 @@
   </head>
   <body id="page-<?php echo $page; ?>">
     <header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    setTimeout(function() {
+        $('.myModal').fadeOut('fast');
+    }, 1000);
+    </script>
+    <?php
+    if ($_SESSION['show_login']) {
+      echo '<div class="myModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Logged in successfully!</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      ';
+      $_SESSION['show_login'] = false;
+    }
+    ?>
       <div class="page-header-top text-center text-md-start container" aria-label="YouBuyAnyCar logo">
         <a href="index.php"><img src="images/logo.png" alt="YouBuyAnyCar logo"></a>
       </div>

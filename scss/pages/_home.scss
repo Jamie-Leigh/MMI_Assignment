@@ -13,7 +13,18 @@ a {
 p {
     text-align: left !important;
 }
+.myModal {
+    background: none;
 
+    .modal-dialog > .modal-content {
+        background-color: rgba(0,255,0, 0.5);
+        border: $tertiary-color solid 1px;
+        .border-header {
+            border-bottom: none !important;
+            justify-content: center !important;
+        }
+    }
+}
 .search {
     display: grid;
     grid-template-columns: 1fr 1fr;
