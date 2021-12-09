@@ -4,6 +4,7 @@
     <?php
         $Basket = new Basket($Conn);
         $user_basket = $Basket->getBasketForUser();
+        var_dump($_SESSION['test']);
         $attributesToHide = ["car_id", "image", "active", "basket_id", "user_id"];
         $totalPrice = 0;
 

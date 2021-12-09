@@ -4,10 +4,10 @@ require_once(__DIR__.'/../includes/autoloader.php');
 require_once(__DIR__.'/../includes/database.php');
 
 if($_SESSION['user_data']['user_id']) {
-    $user_id = (int) $_POST['user_id'];
+    $user_id = $_SESSION['user_data']['user_id'];
     if ($user_id) {
         $Basket = new Basket($Conn);
-        $clear = $Basket->clearBasketForUser($_POST['user_id']);
+        $clear = $Basket->checkoutForUser();
         if($clear) {
             echo json_encode(array(
                 "success" => true,
