@@ -14,7 +14,7 @@
 	"image     description"
 	"car-title description";
 
-	@media screen and (max-width: 991px) {
+	@media screen and (max-width: $tabletBreakPoint) {
 		 grid-template-columns: 180px auto;
 	// 	grid-template-areas:
 	// 	"image     description"
@@ -31,7 +31,7 @@
 		-moz-background-size: cover;
 		background-size: cover;
 		grid-area: image;
-		@media screen and (max-width: 991px) {
+		@media screen and (max-width: $tabletBreakPoint) {
 			width: 180px;
 		}
 
@@ -67,7 +67,7 @@
 		"seats     colour     body_type          active         price"
 		".         .          .                  .              button";
 
-		@media screen and (max-width: 991px) {
+		@media screen and (max-width: $tabletBreakPoint) {
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr 1fr 1fr 40px;
 			grid-template-areas:
@@ -125,7 +125,7 @@
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: center;
-			@media screen and (max-width: 991px) {
+			@media screen and (max-width: $tabletBreakPoint) {
 				display: none;
 			}
 		}
@@ -139,7 +139,7 @@
 		.btn {
 			grid-area: button;
 			justify-self: center;
-			@media screen and (max-width: 425px) {
+			@media screen and (max-width: $tinyBreakPoint) {
 				font-size: smaller;
 				padding: 0;
 			}

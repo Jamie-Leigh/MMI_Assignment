@@ -88,7 +88,7 @@
       </div>
     <div class="col-lg-4">
       <h2>Our locations:</h2>
-      <div id='map' style='width: auto; height: 400px;'></div>
+      <div id='map'></div>
       <script>
       mapboxgl.accessToken = 'pk.eyJ1IjoiamFtaWUtbGVpZ2giLCJhIjoiY2t3cGV2Ymx0MDh0bzJ1cnRhcGduNGJqYiJ9.atGN7v9atiuCwDxcz1HCiw';
       const map = new mapboxgl.Map({
