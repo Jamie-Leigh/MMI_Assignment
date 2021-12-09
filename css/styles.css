@@ -170,9 +170,12 @@ footer p {
 }
 .car-card .car-details .detail-title {
   font-weight: 700;
+  color: black;
 }
 .car-card .car-details .detail-content {
   font-weight: 200;
+  color: black;
+  resize: none;
 }
 .car-card .car-details .btn {
   grid-area: button;

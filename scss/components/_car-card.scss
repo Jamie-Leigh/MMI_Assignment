@@ -132,9 +132,12 @@
 
 		.detail-title {
 			font-weight: 700;
+			color: black;
 		}
 		.detail-content {
 			font-weight: 200;
+			color: black;
+			resize: none;
 		}
 		.btn {
 			grid-area: button;

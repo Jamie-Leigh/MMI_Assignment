@@ -24,11 +24,36 @@
                                 <div class='detail-content'>".($detailName == 'price' ? "£".number_format($detail) : $detail)."</div>
                             </div>";
                     }
-                    if ($page == 'caradmin' && $detailName != 'image') {
+                    if ($page == 'caradmin') {
+                        if ($detailName == 'image') {
+                            echo '';
+                        }
+                        if ($detailName == 'description') {
+                            echo "<div class=".$detailName.">
+                            <div class='detail-title'>".ucwords($detailName)."</div>
+                            <textarea
+                                type='text'
+                                disabled
+                                name=".$detailName."
+                                class='detail-content ".$detailName." ".$car['car_id']."'
+                                rows='4'
+                                >".$detail."</textarea>
+                        </div>";
+                        }
+                        if (!in_array($detailName, ['image', 'description'])) {
                         echo "<div class=".$detailName.">
                                 <div class='detail-title'>".ucwords(str_replace("_", " ", $detailName))."</div>
-                                <input type='text' disabled name=".$detailName." class='detail-content ".$detailName." ".$car['car_id']."' value='".$detail."' placeholder='".($detailName == 'price' ? "£".number_format($detail) : $detail)."'></input>
+                                <input
+                                    type='text'
+                                    disabled
+                                    name=".$detailName."
+                                    class='detail-content ".$detailName." ".$car['car_id']."'
+                                    value='".$detail."' 
+                                    placeholder='".($detailName == 'price' ? "£".number_format($detail) : $detail)."'
+                                >
+                                </input>
                             </div>";
+                        }
                     }
                 }
             }
