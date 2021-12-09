@@ -138,9 +138,13 @@
 			resize: none;
 			width: 100%;
 		}
+		.addToBasket {
+			grid-area: button;
+		}
 		.btn {
 			grid-area: button;
 			justify-self: center;
+			height: 40px;
 			&:not(.edit, .save) {
 				@media screen and (max-width: $tinyBreakPoint) {
 					font-size: smaller;

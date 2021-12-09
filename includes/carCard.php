@@ -48,7 +48,7 @@
                             readonly
                             disabled
                             name=".$detailName."
-                            class='detail-content ".$detailName." 1'
+                            class='detail-content ".$detailName." ".$car['car_id']."'
                             value='".$detail."' 
                             placeholder='".$detail."'
                         >

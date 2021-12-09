@@ -37,12 +37,16 @@ header nav a:active {
   font-weight: 500;
   color: #393e4f;
 }
+header nav .active {
+  color: #e8c547 !important;
+}
 header nav .navbar-brand {
   font-family: "Bangers", cursive;
 }
 
 footer p {
   font-size: 0.9rem;
+  text-align: center !important;
 }
 
 .btn.btn-ybac {
@@ -179,11 +183,15 @@ footer p {
   resize: none;
   width: 100%;
 }
+.car-card .car-details .addToBasket {
+  grid-area: button;
+}
 .car-card .car-details .btn {
   grid-area: button;
   justify-self: center;
+  height: 40px;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 490px) {
   .car-card .car-details .btn:not(.edit, .save) {
     font-size: smaller;
     padding: 0;
@@ -241,6 +249,14 @@ footer p {
   flex-direction: row !important;
 }
 
+a {
+  color: inherit !important;
+}
+
+p {
+  text-align: left !important;
+}
+
 .search {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -270,6 +286,7 @@ footer p {
   grid-column-gap: 80px;
   border-bottom: 10px;
   color: #5c80bc;
+  row-gap: 10px;
 }
 @media screen and (max-width: 768px) {
   #filter-form {

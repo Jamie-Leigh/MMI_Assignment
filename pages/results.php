@@ -14,7 +14,10 @@
             foreach($cars as $car) {
                 require(__DIR__.'/../includes/carCard.php');
             }
-        } else {
+        } if ($_POST && !$cars) {
+            echo "No results found";
+        }
+        if (!$cars) {
             echo "No cars for sale! Check back later";
         }
         ?>
