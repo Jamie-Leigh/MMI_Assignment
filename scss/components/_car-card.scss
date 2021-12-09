@@ -141,7 +141,7 @@
 		.btn {
 			grid-area: button;
 			justify-self: center;
-			&:not(.edit) {
+			&:not(.edit, .save) {
 				@media screen and (max-width: $tinyBreakPoint) {
 					font-size: smaller;
 					padding: 0;

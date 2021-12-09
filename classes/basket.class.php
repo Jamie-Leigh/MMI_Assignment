@@ -72,7 +72,6 @@ class Basket {
 			$data['car_id'.$index.''] = $car['car_id'];
 		}
 		$query .=';';
-		$_SESSION['test'] = [$query, $data];
 		$stmt = $this->Conn->prepare($query);
 
 

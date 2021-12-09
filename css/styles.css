@@ -184,7 +184,7 @@ footer p {
   justify-self: center;
 }
 @media screen and (max-width: 425px) {
-  .car-card .car-details .btn:not(.edit) {
+  .car-card .car-details .btn:not(.edit, .save) {
     font-size: smaller;
     padding: 0;
   }
