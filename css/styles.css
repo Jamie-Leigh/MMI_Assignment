@@ -51,7 +51,7 @@ footer p {
 
 .btn.btn-ybac {
   background-color: #5c80bc;
-  color: #30323d;
+  color: #30323d !important;
 }
 
 .car-card {

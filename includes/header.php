@@ -13,11 +13,12 @@
     <script src="https://kit.fontawesome.com/5f1e196da0.js" crossorigin="anonymous"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
-
+    <link rel="icon" href="./images/favicon.ico">
+    
   </head>
   <body id="page-<?php echo $page; ?>">
     <header>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
     setTimeout(function() {
         $('.myModal').fadeOut('fast');

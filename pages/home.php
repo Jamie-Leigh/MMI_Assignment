@@ -5,7 +5,7 @@
       <p>
         We offer a wide range of used cars for you to buy at a great price. You can collect your car from any of our dealerships across the UK.
         If you wish to buy a car today, you'll need to <a href="index.php?p=login">register or login</a>.
-        If you have any questions, please see our <a href="index.php?p=faqs">FAQ page</a>.
+        If you have any questions, please see our <a href="index.php?p=faq">FAQ page</a>.
       </p>
       <p>If you know what make of car you're after, type it into the search box below:</p>
       <form action="index.php?p=results" class="search" method="post" class="d-flex">
