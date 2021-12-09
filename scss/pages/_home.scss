@@ -12,6 +12,14 @@
     grid-column-gap: 80px;
     grid-row-gap: 10px;
 
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "search"
+        "button";
+    }
+
+
     .search {
         grid-area: search;
     }

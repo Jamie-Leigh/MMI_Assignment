@@ -12,6 +12,7 @@ h1 {
   color: #fff;
   font-size: 2.2rem;
   border-bottom: solid 2px #5c80bc;
+  padding-top: 10px;
 }
 
 h2 {
@@ -241,6 +242,12 @@ footer p {
   grid-column-gap: 80px;
   grid-row-gap: 10px;
 }
+@media screen and (max-width: 768px) {
+  .search {
+    grid-template-columns: 1fr;
+    grid-template-areas: "search" "button";
+  }
+}
 .search .search {
   grid-area: search;
 }
@@ -332,6 +339,16 @@ body#page-car .car-image-additional a {
 .checkoutButton {
   display: flex;
   justify-content: center;
+}
+
+.row {
+  flex-direction: column;
+  align-content: center;
+  color: white;
+  text-align: center;
+}
+.row .goHomeButton {
+  width: auto;
 }
 
 .row {

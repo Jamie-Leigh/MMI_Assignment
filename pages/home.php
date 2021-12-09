@@ -2,13 +2,20 @@
   <h1 class="mb-4 pb-2">Welcome to YouBuyAnyCar</h1>
   <div class="row">
     <div class="col-lg-8 filter-container ">
-      <p>If you know what car you want, you can search by text in the header above, or narrow our available cars down with the filters below</p>
+      <p>
+        We offer a wide range of used cars for you to buy at a great price. You can collect your car from any of our dealerships across the UK.
+        If you wish to buy a car today, you'll need to register or login using the 'LOGIN/REGISTER' link above.
+        If you have any questions, please see our FAQ page.
+      </p>
       <form action="index.php?p=results" class="search" method="post" class="d-flex">
         <input class="form-control search mr-sm2" type="search" id="search" name="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-ybac" type="submit">Search</button>
       </form>
       <br />
-      <p>If you just want to see all the cars we currently have in stock, click the button below with no filters applied</p>
+      <p>
+      If you know what car you're after, you can search by text above, or apply some filters and click 'Search' below.
+      If you just want to see the cars we have available, leave the filters empty and click Search
+      </p>
       <div class="filters">
         <form id="filter-form" method=post action="index.php?p=results">
             <div class="form-group min-price">
@@ -76,7 +83,7 @@
               </select>
             </div>
             </div>
-            <button type="submit" name="filter" value="1" class="btn btn-ybac">Search with above filters</button>
+            <button type="submit" name="filter" value="1" class="btn btn-ybac">Search</button>
         </form>
       </div>
     <div class="col-lg-4">

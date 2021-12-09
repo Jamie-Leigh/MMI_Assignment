@@ -1,4 +1,3 @@
-<?php var_dump($_POST); ?>
 <div class='col-md-12'>
     <div class="car-card">
         <div class="car-card-image" style="background-image: url('./car_images_main/<?php echo $car['image']; ?>');">
@@ -33,7 +32,6 @@
                     }
                 }
             }
-            echo "<input type='hidden'>".$car['car_id']."</input>";
                 if ($Basket) {
                     $isInBasket = $Basket->isInBasket($car['car_id']);
                     require(__DIR__.'/../includes/addToBasket.php');

@@ -15,8 +15,15 @@
                         <button type="submit" class="btn btn-ybac checkout" data-userid="'.$_SESSION["user_data"]["user_id"].'">Checkout</button>
                     </form>
                   </div>';
-            } else {
-                echo "<h3>Basket is empty!</h3>";
-            } ?>
+        } else {
+            echo '
+                <h3>Basket is empty!</h3>
+                <div class="goHomeButton">
+                    <form method="post" action="index.php">
+                        <button type="submit" class="btn btn-ybac">Click here to find cars!</button>
+                    </form>
+                </div>
+                ';
+    } ?>
     </div>
 </div>
