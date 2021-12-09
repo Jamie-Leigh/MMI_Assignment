@@ -8,10 +8,10 @@ if($_SESSION['user_data']['user_id']) {
 
     if ($_POST) {
         $Car = new Car($Conn);
-        $update = $Car->updateCar($_POST);
-        echo json_encode(array(
-            "post" => $_POST
-        ));
+        // $update = $Car->updateCar($_POST);
+        // echo json_encode(array(
+        //     "post" => $_POST
+        // ));
         if($update) {
             echo json_encode(array(
                 "success" => true,

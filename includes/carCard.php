@@ -45,9 +45,10 @@
                             <div class='detail-title'>".ucwords($detailName)."</div>
                             <input
                             type='text'
+                            readonly
                             disabled
                             name=".$detailName."
-                            class='detail-content ".$detailName."'
+                            class='detail-content ".$detailName." 1'
                             value='".$detail."' 
                             placeholder='".$detail."'
                         >

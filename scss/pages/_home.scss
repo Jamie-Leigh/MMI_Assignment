@@ -3,6 +3,10 @@
     margin-bottom: 10px;
 }
 
+.row {
+    flex-direction: row !important;
+}
+
 .search {
     display: grid;
     grid-template-columns: 1fr 1fr;
