@@ -13,8 +13,9 @@ a {
 p {
     text-align: left !important;
 }
-.myModal {
+.loggedInModal {
     background: none;
+    position: absolute;
 
     .modal-dialog > .modal-content {
         background-color: rgba(0,255,0, 0.5);

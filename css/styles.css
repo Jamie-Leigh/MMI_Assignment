@@ -262,14 +262,15 @@ p {
   text-align: left !important;
 }
 
-.myModal {
+.loggedInModal {
   background: none;
+  position: absolute;
 }
-.myModal .modal-dialog > .modal-content {
+.loggedInModal .modal-dialog > .modal-content {
   background-color: rgba(0, 255, 0, 0.5);
   border: #e8c547 solid 1px;
 }
-.myModal .modal-dialog > .modal-content .border-header {
+.loggedInModal .modal-dialog > .modal-content .border-header {
   border-bottom: none !important;
   justify-content: center !important;
 }
@@ -446,6 +447,31 @@ body#page-car .car-image-additional a {
 .row .column .form {
   display: flex;
   flex-direction: column;
+}
+
+.savingModal {
+  position: absolute;
+  width: 100%;
+  min-height: -webkit-fill-available;
+  background: rgba(192, 192, 192, 0.7);
+}
+
+.modal-dialog {
+  margin: 0.75rem auto !important;
+}
+
+.modal-header {
+  justify-content: center !important;
+  border-bottom: none !important;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-body p {
+  color: black;
 }
 
 body {

@@ -21,12 +21,12 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
     setTimeout(function() {
-        $('.myModal').fadeOut('fast');
-    }, 1000);
+        $('.loggedInModal').fadeOut('slow');
+    }, 5000);
     </script>
     <?php
     if ($_SESSION['show_login']) {
-      echo '<div class="myModal" tabindex="-1" role="dialog">
+      echo '<div class="myModal loggedInModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">

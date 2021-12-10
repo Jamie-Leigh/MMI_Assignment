@@ -1,4 +1,3 @@
-
 <?php
     $Car = new Car($Conn);
     $cars = $Car->getAllCars($_POST);
@@ -8,7 +7,7 @@
         $Car->updateCar($_POST);
         $_POST = null;
         echo '
-        <div class="myModal" tabindex="-1" role="dialog">
+        <div class="savingModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -22,6 +21,7 @@
             </div>
         </div>
         ';
+        sleep(2);
         header("Refresh:0");
     }
 
