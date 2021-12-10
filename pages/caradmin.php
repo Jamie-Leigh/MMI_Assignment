@@ -27,8 +27,8 @@
 
 ?>
 <div class="container">
-    <h1 class="mb-4 pb-2">Cars</h1>
-    <p>Browse our wide range of cars below</p>
+    <h1 class="mb-4 pb-2">Car Admin</h1>
+    <p>You can change our current stock below. Just click Edit on the car you want to change, make the change and click Save.</p>
     <div class="row">
         <?php foreach($cars as $car) {
             require(__DIR__.'/../includes/carCard.php');

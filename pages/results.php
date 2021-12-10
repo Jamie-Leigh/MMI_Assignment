@@ -14,11 +14,8 @@
             foreach($cars as $car) {
                 require(__DIR__.'/../includes/carCard.php');
             }
-        } if ($_POST && !$cars) {
-            echo "No results found";
-        }
-        if (!$cars) {
-            echo "No cars for sale! Check back later";
+        } else {
+            echo '<div class="noResults"><p>No results found!</p><p><a class="btn btn-ybac centralised" href="index.php">Go home</a></p></div>';
         }
         ?>
     </div>
