@@ -137,6 +137,10 @@
 			color: black;
 			resize: none;
 			width: 100%;
+			@media screen and (max-width: $tabletBreakPoint) {
+				max-height: 100px;
+				overflow-y: auto;
+			}
 		}
 		.addToBasket {
 			grid-area: button;

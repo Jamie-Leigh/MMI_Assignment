@@ -183,6 +183,12 @@ footer p {
   resize: none;
   width: 100%;
 }
+@media screen and (max-width: 991px) {
+  .car-card .car-details .detail-content {
+    max-height: 100px;
+    overflow-y: auto;
+  }
+}
 .car-card .car-details .addToBasket {
   grid-area: button;
 }
