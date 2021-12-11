@@ -21,14 +21,14 @@
             </div>
         </div>
         ';
-        sleep(2);
+        sleep(3);
         header("Refresh:0");
     }
 
 ?>
 <div class="container">
     <h1 class="mb-4 pb-2">Car Admin</h1>
-    <p>You can change our current stock below. Just click Edit on the car you want to change, make the change and click Save.</p>
+    <p>You can change our current stock below. Just click Edit on the car you want to change, make the change(s) and click Save.</p>
     <div class="row">
         <?php foreach($cars as $car) {
             require(__DIR__.'/../includes/carCard.php');
